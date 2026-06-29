@@ -40,3 +40,38 @@ def register_user(data):
         "message": "User registered successfully.",
         "data": user.to_dict()
     }, 201
+from flask_jwt_extended import create_access_token
+
+
+def login_user(data):
+    email = data.get("email")
+    password = data.get("password")
+
+    if not email or not password:
+        return {
+            "success": False,
+            "message": "Email and password are required."
+        }, 400
+
+    user = User.query.filter_by(email=email).first()
+
+    if not user:
+        return {
+            "success": False,
+            "message": "Invalid email or password."
+        }, 401
+
+    if not user.check_password(password):
+        return {
+            "success": False,
+            "message": "Invalid email or password."
+        }, 401
+
+    token = create_access_token(identity=str(user.id))
+
+    return {
+        "success": True,
+        "message": "Login successful.",
+        "token": token,
+        "user": user.to_dict()
+    }, 200

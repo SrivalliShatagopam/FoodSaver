@@ -5,7 +5,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = "foodsaver_secret_key"
-
+    JWT_SECRET_KEY = "foodsaver_jwt_secret_key"
     SQLALCHEMY_DATABASE_URI = (
         f"sqlite:///{os.path.join(BASE_DIR, 'instance', 'foodsaver.db')}"
     )
