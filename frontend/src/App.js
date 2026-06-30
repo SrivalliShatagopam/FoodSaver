@@ -1,10 +1,8 @@
+import "./App.css";
+import AppRoutes from "./routes/AppRoutes";
+
 function App() {
-  return (
-    <div>
-      <h1>FoodSaver</h1>
-      <p>Excess Food Donation Platform</p>
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

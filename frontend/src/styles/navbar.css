@@ -1,0 +1,54 @@
+/* ===== Navbar ===== */
+
+.navbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--heading);
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.register-btn {
+    background: var(--primary);
+    color: white !important;
+
+    padding: 12px 24px;
+
+    border-radius: var(--radius-md);
+
+    transition: .3s;
+}
+
+.register-btn:hover {
+    background: var(--primary-dark);
+}
